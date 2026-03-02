@@ -47,6 +47,7 @@ from rotkehlchen.db.settings import DEFAULT_BTC_DERIVATION_GAP_LIMIT
 from rotkehlchen.externalapis.beaconchain.service import BeaconChain
 from rotkehlchen.externalapis.blockscout import Blockscout
 from rotkehlchen.externalapis.etherscan import Etherscan
+from rotkehlchen.externalapis.goldrush import GoldRush
 from rotkehlchen.externalapis.helius import Helius
 from rotkehlchen.externalapis.opensea import Opensea
 from rotkehlchen.externalapis.routescan import Routescan
@@ -115,6 +116,10 @@ def _initialize_and_yield_evm_inquirer_fixture(
                 msg_aggregator=database.msg_aggregator,
             ),
             routescan=Routescan(
+                database=database,
+                msg_aggregator=database.msg_aggregator,
+            ),
+            goldrush=GoldRush(
                 database=database,
                 msg_aggregator=database.msg_aggregator,
             ),
