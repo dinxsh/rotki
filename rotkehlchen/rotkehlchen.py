@@ -544,7 +544,6 @@ class Rotkehlchen:
             alchemy=self.alchemy,
             uniswapv2=(uniswap_v2_oracle := UniswapV2Oracle()),
             uniswapv3=(uniswap_v3_oracle := UniswapV3Oracle()),
-            goldrush=goldrush,
         )
         price_historian.set_oracles_order(settings.historical_price_oracles)
 
